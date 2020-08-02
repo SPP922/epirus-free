@@ -11,9 +11,16 @@ This dockerized environment is designed for viewing private
 
 Clone the repo, navigate to the cloned directory and run the instance with:
 
+**Windows:**
+```bat
+docker-compose pull
+set NODE_ENDPOINT=http://<node_endpoint>
+set NGINX_POINT=90
+docker-compose up -d
+```
 ```bash
 docker-compose pull
-NODE_ENDPOINT=http://<node_endpoint> docker-compose up
+NODE_ENDPOINT=http://<node_endpoint> NGINX_POINT=90 docker-compose up
 ```
 
 Note that if setting `NODE_ENDPOINT` to a local Ethereum instance, you may need to use the IP address associated with the Docker bridged interface, often denoted by `docker0`.
